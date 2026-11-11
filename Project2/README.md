@@ -1,8 +1,8 @@
 # CIS 3400 – Advanced Programming
 ## Project 2: Python Application Development
 
-**Student Name:** [Your Name]  
-**Project Title:** [Application Name]  
+**Student Name:** Markiian Ivaniv
+**Project Title:** Budget-Expense Management Application
 **Course:** CIS 3400 – Advanced Programming  
 **Final Presentation:** December 8, 2026
 
@@ -12,7 +12,7 @@
 
 **Application Name:** [Name]
 
-**Project Option:** [Predictive ML / Database-Enabled / AI-Powered Application]
+**Project Option:** Database-Enabled
 
 ### Problem Statement
 Describe the problem your application solves and why it is important. Write 3–5 sentences.
