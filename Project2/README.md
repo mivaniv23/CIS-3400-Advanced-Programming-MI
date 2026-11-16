@@ -127,34 +127,69 @@ The planned architecture consists of the following components:
 
 8. When requested, the reporting module uses OpenPyXL to generate an Excel report for download.
 
-9. Components developed by the student: The Flask application, Python database module, expense management functionality, HTML templates, CSS styling, and Excel report generation module.
+**Components developed by the student:** The Flask application, Python database module, expense management functionality, HTML templates, CSS styling, and Excel report generation module.
 
 
 
 ## 5. Project Structure
 
-Replace this example with your **actual** folders and files:
+The initial project organization is:
 
 ```text
-project2/
+solar_budget_assistant/
+│
 ├── app.py
-├── model/
-│   └── student_model.joblib
-├── notebooks/
-│   └── model_training.ipynb
-├── data/
-│   └── sample_data.csv
-├── docs/
-│   └── architecture.png
+├── database.py
+├── reports.py
 ├── requirements.txt
-└── README.md
+├── README.md
+├── .gitignore
+│
+├── solar_budget.db
+│
+├── templates/
+│   ├── base.html
+│   ├── dashboard.html
+│   ├── expenses.html
+│   ├── add_expense.html
+│   ├── settings.html
+│   └── reports.html
+│
+├── static/
+│   ├── style.css
+│   └── uploads/
+│
+└── reports/
+    └── (Generated Excel reports)
 ```
 
-Describe the purpose of your important files. Remove files that are not used.
+**Important Files and Their Purposes**
+
+- app.py: Main application file. Handles Flask routes, user requests, expense validation, budget settings, and application navigation.
+
+- database.py: Contains the BudgetDB class, which creates database tables and handles adding, retrieving, filtering, and deleting expenses.
+
+- reports.py: Generates formatted Excel reports using OpenPyXL.
+
+- requirements.txt: Lists the Python packages required to run the application.
+
+- README.md: Contains project information and installation instructions.
+
+- solar_budget.db: SQLite database containing budget settings and expense records. Created automatically when the application initializes.
+
+- templates/: Contains the HTML pages used by Flask.
+
+- static/style.css: Contains the visual design and responsive styling.
+
+- static/uploads/: Stores uploaded receipt images.
+
+- reports/: Stores generated Excel reports.
+
+
 
 ## 6. Installation and Running the Application
 
-Provide instructions so another student or your professor can run the project.
+The application is designed to run locally using Python and Flask.
 
 ### Step 1: Clone the repository
 
@@ -163,84 +198,130 @@ git clone [repository-url]
 cd [repository-folder]
 ```
 
-### Step 2: Install dependencies
+### Step 2: Create a Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+## Activate it:
+
+### Windows:
+```bash
+.venv\Scripts\activate
+```
+
+### macOS/Linux:
+```bash
+source .venv/bin/activate
+```
+
+### Step 3: Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 3: Run the application
+### Step 4: Run the Application
 
-For Streamlit:
-
+Open a browser and navigate to:
 ```bash
-streamlit run app.py
+http://127.0.0.1:5000
 ```
 
-For Flask (if configured to start from `app.py`):
+The SQLite database and required tables are created automatically when the application starts for the first time.
 
-```bash
-python app.py
-```
-
-Replace these examples with the correct commands for your project. Explain database setup, environment variables, model files, or API configuration if needed. **Never commit passwords, API keys, or other secrets.**
+No external API keys or third-party database services are required for the current version.
 
 ## 7. Testing and Validation
 
+The following tests are planned to verify that the application works correctly.
+
 | Test | Expected Result | Actual Result |
 |---|---|---|
-| Normal user input | Application processes input | [Result] |
-| Invalid or missing input | Helpful error message | [Result] |
-| Model/database/API interaction | Correct response | [Result] |
-| Additional feature | Feature works correctly | [Result] |
+| Add a valid expense | Expense is saved in SQLite and appears in the expense list | To be verified |
+| Submit an invalid expense | Application displays an appropriate error message | To be verified |
+| Update the team budget | Dashboard displays the updated budget and remaining balance | To be verified |
+| Filter expenses | Only transactions matching the selected filters are displayed | [To be verified |
+| Upload a receipt | Receipt image is saved and associated with the expense | To be verified |
+| Generate an Excel report | Correct Excel workbook is generated and downloaded | To be verified |
+| Delete an expense | Transaction is removed from the database | To be verified |
 
-Describe known limitations or unresolved problems.
+**Known Limitations**
+
+- The current application does not include user authentication or individual accounts.
+
+- The application is designed primarily for local use and does not yet support secure multi-user access.
+
+- Receipt uploads are currently limited to image formats.
+
+- A production deployment would require additional security configuration and a production web server.
+
 
 ## 8. AI-Assisted Development Disclosure
 
-**AI Tools Used:** [ChatGPT, GitHub Copilot, Claude, etc., or None]
+**AI Tools Used:** ChatGPT
 
 ### How AI Was Used
 
-Describe AI assistance with design, coding, debugging, testing, documentation, or other tasks. Be specific.
+ChatGPT was used as an assistance tool during the development and planning of the application. AI assistance included brainstorming application functionality, discussing Python and Flask implementation approaches, troubleshooting programming issues, and improving project documentation.
+
+AI assistance was also used to explore database organization, expense management functionality, and Excel report generation.
 
 ### Student Contributions
 
-Explain the work you personally completed, including design decisions, code modifications, integration, testing, and debugging.
+I developed the project around the financial management needs of the Catawba College Solar Vehicle Team. I made decisions regarding the application's features, expense categories, database organization, and overall interface.
+
+My contributions include working with the Python application structure, Flask routes, SQLite database integration, HTML templates, CSS styling, receipt management, and Excel report functionality. I am responsible for reviewing, understanding, testing, and explaining the application and its implementation.
 
 **Student statement:** I reviewed, tested, and can explain the code and technologies used in my application, including code developed with AI assistance.
 
 ## 9. Challenges and Lessons Learned
 
-**Challenge 1:** [Description and solution]
+**Challenge 1: Database Organization** One of the main challenges is designing a database structure that can efficiently store and retrieve budget information and individual expense records. The solution is to use SQLite with separate tables for budget settings and expenses. A dedicated Python class handles database operations, making the application easier to organize and maintain.
 
-**Challenge 2:** [Description and solution]
+**Challenge 2: Connecting the Web Interface with Python** Another challenge is connecting user input from HTML forms with Python functions and database operations. Flask provides the connection between the web pages and the backend. It allows users to submit expenses, update budget settings, and request financial reports without interacting directly with the database.
 
-What new Python programming skills or technologies did you learn?
+## New Skills and Technologies
+
+Through this project, I am developing practical experience with:
+
+- Python application development.
+
+- Object-oriented programming and Python classes.
+
+- Flask web application development.
+
+- SQLite database design and SQL queries.
+
+- HTML forms and CSS styling.
+
+- File uploads and file management.
+
+- Generating and formatting Excel documents with OpenPyXL.
+
+- Organizing a multi-file Python application.
+  
 
 ## 10. Application Screenshots
 
-Include at least two screenshots with captions:
+**Main Dashboard:** Shows the total budget, spending, remaining balance, and category breakdown.
 
-1. Main application interface
-2. Application showing a working feature or result
+docs/main-dashboard.png
 
-Add screenshots to a folder such as `docs/` and embed them here, for example:
+**Expense Management:** Shows the expense list, filtering options, and recorded transactions.
 
-```markdown
-![Main application interface](docs/main-screen.png)
-```
+Project2/expenseRecords.png
 
-## 11. Project Links
+**Financial Reports:** Shows the report generation interface and downloadable Excel reports.
 
-**GitHub Repository:** [URL]  
-**Deployed Application:** [URL, if applicable]  
-**Demonstration Video:** [URL, if applicable]
+Project2/financial-reports.png
 
-## 12. Future Improvements
+## 11. Future Improvements
 
-1. [Improvement]
-2. [Improvement]
+1. User Authentication and Permissions: Introduce individual accounts and different access levels for team members, project managers, and administrators.
+
+2. Multi-Vehicle Budget Management: Expand the application to support separate budgets and expense tracking for multiple solar vehicles, allowing the team to compare spending between projects.
 
 ---
 
