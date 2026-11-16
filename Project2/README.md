@@ -15,20 +15,48 @@
 **Project Option:** Database-Enabled
 
 ### Problem Statement
-Describe the problem your application solves and why it is important. Write 3–5 sentences.
+The Catawba College Solar Vehicle Team needs an organized way to manage its project budget and track expenses. Currently, managing purchases, receipts, and spending across different team departments can become difficult, especially as the team develops multiple solar vehicles. This application provides a centralized system for recording expenses, monitoring the remaining budget, and organizing financial information. It also allows the team to generate Excel reports, making financial tracking and reporting easier and more efficient.
 
 ### Intended Users
-Who will use your application? What will they accomplish with it?
+The primary users are members of the Catawba College Solar Vehicle Team, especially team leadership and members responsible for purchasing, finances, and project management.
+
+Users will be able to:
+
+- Monitor the team's overall budget.
+
+- Record and organize purchases.
+
+- Upload and access expense receipts.
+
+- Track spending across different departments.
+
+- Generate financial reports for specific periods.
+
+- Review how much money remains available.
 
 ### Unique Features
-Explain what makes your application different from classroom demonstrations or an existing application.
+Unlike a basic expense calculator or classroom budgeting demonstration, this application is designed specifically for a university solar vehicle team.
+
+Its main distinguishing features include:
+
+- Department-based expense tracking for Mechanical, Electrical, Media, Operations, and Travel.
+
+- Receipt image uploads connected to individual transactions.
+
+- A centralized SQLite database that preserves financial records.
+
+- Automatic budget calculations and spending summaries.
+
+- Professional Excel reports with transaction details and category summaries.
+
+- The application is designed around the actual financial management needs of a student engineering team.
 
 ## 2. Application Features
 
-- **Feature 1:** [Description]
-- **Feature 2:** [Description]
-- **Feature 3:** [Description]
-- **Feature 4 (optional):** [Description]
+- **Feature 1: Budget Dashboard:** [Displays the total team budget, total expenses, remaining balance, and percentage of the budget used. It also provides a breakdown of spending by category and displays recent transactions.]
+- **Feature 2: Expense Management:** [Allows users to record expenses by entering the date, amount, vendor, reference number, category, and additional notes. Users can also upload receipt images and review or delete existing transactions.]
+- **Feature 3: Department-Based Expense Tracking:** [Organizes expenses into categories such as Travel, Mechanical, Electrical, Media, and Operations. Users can filter transactions by category, date range, and minimum or maximum expense amount.]
+- **Feature 4: Excel Financial Reports:** [Generates downloadable Excel reports for daily, monthly, and yearly spending. Reports include transaction details, budget information, total spending, remaining balance, and a separate worksheet summarizing expenses by category.]
 
 Explain how users interact with the application and what results they receive.
 
