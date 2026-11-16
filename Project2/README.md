@@ -53,12 +53,16 @@ Its main distinguishing features include:
 
 ## 2. Application Features
 
-- **Feature 1: Budget Dashboard:** [Displays the total team budget, total expenses, remaining balance, and percentage of the budget used. It also provides a breakdown of spending by category and displays recent transactions.]
-- **Feature 2: Expense Management:** [Allows users to record expenses by entering the date, amount, vendor, reference number, category, and additional notes. Users can also upload receipt images and review or delete existing transactions.]
-- **Feature 3: Department-Based Expense Tracking:** [Organizes expenses into categories such as Travel, Mechanical, Electrical, Media, and Operations. Users can filter transactions by category, date range, and minimum or maximum expense amount.]
-- **Feature 4: Excel Financial Reports:** [Generates downloadable Excel reports for daily, monthly, and yearly spending. Reports include transaction details, budget information, total spending, remaining balance, and a separate worksheet summarizing expenses by category.]
+- **Feature 1: Budget Dashboard:** Displays the total team budget, total expenses, remaining balance, and percentage of the budget used. It also provides a breakdown of spending by category and displays recent transactions.
+- **Feature 2: Expense Management:** Allows users to record expenses by entering the date, amount, vendor, reference number, category, and additional notes. Users can also upload receipt images and review or delete existing transactions.
+- **Feature 3: Department-Based Expense Tracking:** Organizes expenses into categories such as Travel, Mechanical, Electrical, Media, and Operations. Users can filter transactions by category, date range, and minimum or maximum expense amount.
+- **Feature 4: Excel Financial Reports:** Generates downloadable Excel reports for daily, monthly, and yearly spending. Reports include transaction details, budget information, total spending, remaining balance, and a separate worksheet summarizing expenses by category.
 
-Explain how users interact with the application and what results they receive.
+## User Interaction
+
+Users interact with the application through a web-based interface. They can navigate between the dashboard, expense management, budget settings, and reporting pages.
+
+When a user records an expense, the application validates the information and stores it in the database. The dashboard automatically updates its financial calculations. Users can also select a reporting period and generate an Excel file containing the relevant financial information.
 
 ## 3. Technologies Used
 
@@ -66,17 +70,39 @@ List technologies **actually used** and explain their purposes. Remove unused ex
 
 | Technology | Purpose |
 |---|---|
-| Python | Main programming language |
-| Flask / Streamlit | Web interface and application framework, if used |
-| Pandas / NumPy | Data processing, if used |
-| scikit-learn / Hugging Face | Machine learning or AI, if used |
-| SQLite / MongoDB | Data storage, if used |
-| External APIs | External data or AI services, if used |
-| Other libraries | [Purpose] |
+| Python | Main programming language for application logic and calculations. |
+| Flask | Web application framework responsible for routing and connecting the interface with Python functions. |
+| SQLite| Database used to permanently store budget settings and expense records. |
+| HTML | Creates the application's web pages and forms. |
+| CSS | Provides the application's layout, styling, and responsive design. |
+| Jinja2 | Dynamically displays database information and application results in HTML templates through Flask. |
+| OpenPyXL | Creates and formats downloadable Excel financial reports. |
+| Werkzeug | Supports secure file naming and receipt image uploads. |
+| Python Standard Library | Provides date handling, file management, SQLite connectivity, and other application functionality. |
 
 ## 4. Application Architecture
 
-Insert a labeled diagram showing user input → interface → Python processing (functions/classes) → model, database, API, or external service → output and/or stored results. Identify which components you develop and how data moves.
+The application follows a simple client-server architecture. Flask connects the web interface with Python processing functions and the SQLite database.
+
+Preliminary Architecture Diagram
+
+The planned architecture consists of the following components:
+
+1. User: Enters financial information or requests reports.
+
+2. Web Interface: HTML templates styled with CSS.
+
+3. Flask Application: Receives requests and processes user input.
+
+4. Python Modules: Handle budget calculations, expense management, and report generation.
+
+5. SQLite Database: Stores budget settings and expense transactions.
+
+6. File Storage: Stores uploaded receipt images.
+
+7. Excel Reporting: Generates downloadable financial reports using OpenPyXL.
+
+8. Output: Displays updated information or provides downloadable reports.
 
 ![Application architecture](docs/architecture.png)
 
