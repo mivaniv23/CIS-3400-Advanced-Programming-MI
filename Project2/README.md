@@ -311,7 +311,7 @@ Through this project, I am developing practical experience with:
 
 **Expense Management:** Shows the expense list, filtering options, and recorded transactions.
 
-![Expense Management](/Project2/expenseRecords.png)
+![Expense Management](/Project2/ExpenseRecords.png)
 
 **Financial Reports:** Shows the report generation interface and downloadable Excel reports.
 
