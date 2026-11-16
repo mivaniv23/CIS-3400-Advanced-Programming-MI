@@ -104,7 +104,7 @@ The planned architecture consists of the following components:
 
 8. Output: Displays updated information or provides downloadable reports.
 
-![Application architecture](Project2/architecture.png)
+![Application architecture](/architecture.png)
 
 
 ### How the Application Works
