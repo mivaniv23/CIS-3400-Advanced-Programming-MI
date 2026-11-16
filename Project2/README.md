@@ -109,14 +109,27 @@ The planned architecture consists of the following components:
 
 ### How the Application Works
 
-1. The user enters or selects information.
-2. The interface passes the information to Python.
-3. Python functions or classes process the information.
-4. The application interacts with the model, database, or API, as applicable.
-5. Results are returned and displayed to the user.
-6. Data is saved or updated, if applicable.
 
-Modify these steps to match your actual application.
+
+1. The user opens the application through a web browser.
+
+2. Flask displays the appropriate page using HTML templates.
+
+3. The user enters information, such as a new expense or an updated budget.
+
+4. Flask receives the submitted information and passes it to the appropriate Python functions.
+
+5. The database module validates and stores financial records in SQLite.
+
+6. Python retrieves stored information and calculates spending totals and remaining budget.
+
+7. The results are displayed on the dashboard or expense pages.
+
+8. When requested, the reporting module uses OpenPyXL to generate an Excel report for download.
+
+9. Components developed by the student: The Flask application, Python database module, expense management functionality, HTML templates, CSS styling, and Excel report generation module.
+
+
 
 ## 5. Project Structure
 
